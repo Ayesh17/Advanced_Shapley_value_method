@@ -1,72 +1,22 @@
 Evaluation
 
-Univariate
-
-Model, Accuracy, Precision, Recall, F1-score, Specificity 
-Logistic_regression, 0.741259, 0.750000, 0.619048, 0.678261, 0.837500
-Decision Tree, 0.748252, 0.745455, 0.650794, 0.694915, 0.825000
-Random Forest, 0.776224, 0.792453, 0.666667, 0.724138, 0.862500
-Gradient Boosting, 0.769231, 0.800000, 0.634921, 0.707965, 0.875000
-Neural Network, 0.755245, 0.780000, 0.619048, 0.690265, 0.862500
-
-
-Tree Classifier
-
-Model, Accuracy, Precision, Recall, F1-score, Specificity 
-Logistic_regression, 0.811189, 0.860000, 0.682540, 0.761062, 0.912500
-Decision Tree, 0.692308, 0.672727, 0.587302, 0.627119, 0.775000
-Random Forest, 0.804196, 0.857143, 0.666667, 0.750000, 0.912500
-Gradient Boosting, 0.783217, 0.820000, 0.650794, 0.725664, 0.887500
-Neural Network, 0.734266, 0.704918, 0.682540, 0.693548, 0.775000
-
-
-RFE
-
-Model, Accuracy, Precision, Recall, F1-score, Specificity 
-Logistic_regression, 0.811189, 0.860000, 0.682540, 0.761062, 0.912500
-Decision Tree, 0.748252, 0.754717, 0.634921, 0.689655, 0.837500
-Random Forest, 0.776224, 0.792453, 0.666667, 0.724138, 0.862500
-Gradient Boosting, 0.769231, 0.840909, 0.587302, 0.691589, 0.912500
-Neural Network, 0.804196, 0.830189, 0.698413, 0.758621, 0.887500
-
-
-RFFS
-
-Model, Accuracy, Precision, Recall, F1-score, Specificity 
-Logistic_regression, 0.811189, 0.860000, 0.682540, 0.761062, 0.912500
-Decision Tree, 0.678322, 0.649123, 0.587302, 0.616667, 0.750000
-Random Forest, 0.797203, 0.840000, 0.666667, 0.743363, 0.900000
-Gradient Boosting, 0.783217, 0.820000, 0.650794, 0.725664, 0.887500
-Neural Network, 0.769231, 0.812500, 0.619048, 0.702703, 0.887500
-
-
-Original
-
-Model, Accuracy, Precision, Recall, F1-score, Specificity 
-Logistic_regression, 0.804196, 0.843137, 0.682540, 0.754386, 0.900000
-Decision Tree, 0.706294, 0.698113, 0.587302, 0.637931, 0.800000
-Random Forest, 0.797203, 0.840000, 0.666667, 0.743363, 0.900000
-Gradient Boosting, 0.790210, 0.811321, 0.682540, 0.741379, 0.875000
-Neural Network, 0.720280, 0.688525, 0.666667, 0.677419, 0.762500
-
-
 Shapley
 
 Model, Accuracy, Precision, Recall, F1-score, Specificity 
-Logistic_regression, 0.678322, 0.697674, 0.476190, 0.566038, 0.837500
-Decision Tree, 0.601399, 0.544118, 0.587302, 0.564885, 0.612500
-Random Forest, 0.678322, 0.649123, 0.587302, 0.616667, 0.750000
-Gradient Boosting, 0.671329, 0.673913, 0.492063, 0.568807, 0.812500
-Neural Network, 0.713287, 0.696429, 0.619048, 0.655462, 0.787500
+Logistic_regression, 0.714286, 0.593220, 0.636364, 0.614035, 0.757576
+Decision Tree, 0.701299, 0.578947, 0.600000, 0.589286, 0.757576
+Random Forest, 0.746753, 0.648148, 0.636364, 0.642202, 0.808081
+Gradient Boosting, 0.753247, 0.654545, 0.654545, 0.654545, 0.808081
+Neural Network, 0.707792, 0.575758, 0.690909, 0.628099, 0.717172
 
 
 Adv. Shapley
 
 Model, Accuracy, Precision, Recall, F1-score, Specificity 
-Logistic_regression, 0.811189, 0.860000, 0.682540, 0.761062, 0.912500
-Decision Tree, 0.678322, 0.644068, 0.603175, 0.622951, 0.737500
-Random Forest, 0.818182, 0.862745, 0.698413, 0.771930, 0.912500
-Gradient Boosting, 0.783217, 0.820000, 0.650794, 0.725664, 0.887500
-Neural Network, 0.748252, 0.714286, 0.714286, 0.714286, 0.775000
+Logistic_regression, 0.759740, 0.666667, 0.654545, 0.660550, 0.818182
+Decision Tree, 0.733766, 0.600000, 0.763636, 0.672000, 0.717172
+Random Forest, 0.772727, 0.666667, 0.727273, 0.695652, 0.797980
+Gradient Boosting, 0.746753, 0.633333, 0.690909, 0.660870, 0.777778
+Neural Network, 0.714286, 0.600000, 0.600000, 0.600000, 0.777778
 
 

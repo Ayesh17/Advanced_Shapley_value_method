@@ -57,7 +57,7 @@ def calc_accuracy(X_train_reduced, X_test_reduced, y_train, y_test, num_epochs):
     plt.xlabel('Epoch')
     plt.ylabel('Accuracy')
     plt.legend()
-    # plt.show()
+    plt.show()
 
     # Evaluate the model on the testing data
     y_pred_prob = model.predict(X_test_reduced)

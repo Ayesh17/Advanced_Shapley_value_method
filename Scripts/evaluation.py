@@ -6,8 +6,8 @@ from Scripts.ML_models import Decision_tree as dec_tree, Gradient_boosting as gr
 
 def evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test):
     # Generate logistic regression with reduced features
-    print()
-    print("Logistic Regression")
+    # print()
+    # print("Logistic Regression")
     acc_lr, pre_lr, rec_lr, f1_lr, spe_lr = log_reg.calc_accuracy(X_train_reduced, X_test_reduced, y_train, y_test)
 
     #
@@ -34,7 +34,7 @@ def evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test):
     # Generate the neural network with reduced features
     # print()
     # print("Neural Network")
-    no_epochs = 100
+    no_epochs = 150
     acc_ne, pre_ne, rec_ne, f1_ne, spe_ne = neur.calc_accuracy(X_train_reduced, X_test_reduced, y_train, y_test, no_epochs)
 
 

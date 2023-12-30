@@ -9,48 +9,48 @@ from sklearn.model_selection import train_test_split
 
 
 # Define the function to calculate Shapley value for each feature
-# def shapley_value_calc(X, y, feature):
-#     # Convert input to NumPy array
-#     X = np.array(X)
-#
-#     # Get the number of features
-#     num_features = X.shape[1]
-#
-#     # Initialize the Shapley value to zero
-#     shapley_value = 0.0
-#
-#
-#     # Iterate over all possible permutations of features
-#     for perm in itertools.permutations(range(num_features)):
-#         # print("perm", perm)
-#         # Find the index of the current feature in the permutation
-#         index = perm.index(feature)
-#         # print("index",index)
-#
-#         # Check if the current feature is the first feature in the permutation
-#         if index == 0:
-#             # Calculate the contribution of the first feature to the prediction
-#             X_perm = X[:, perm]
-#             p = np.mean(y[X_perm[:, index] <= np.median(X_perm[:, index])])
-#             shapley_value += p
-#
-#         # Otherwise, calculate the contribution of the current feature to the prediction
-#         else:
-#             # Calculate the contribution of all features before the current feature
-#             X_perm = X[:, perm[:index]]
-#             p1 = np.mean(y[X_perm[:, index-1] <= np.median(X_perm[:, index-1])])
-#             X_perm = X[:, perm[:index+1]]
-#             p2 = np.mean(y[(X_perm[:, index-1] <= np.median(X_perm[:, index-1])) & (X_perm[:, index] >= np.median(X_perm[:, index]))])
-#             shapley_value += (p2 - p1) * math.factorial(index) * math.factorial(num_features - index - 1)
-#
-#     # Normalize the Shapley value
-#     print()
-#     print("shapley val1", shapley_value)
-#     shapley_value /= math.factorial(num_features)
-#
-#     print()
-#     print("shapley val",shapley_value)
-#     return shapley_value
+def shapley_value_calc(X, y, feature):
+    # Convert input to NumPy array
+    X = np.array(X)
+
+    # Get the number of features
+    num_features = X.shape[1]
+
+    # Initialize the Shapley value to zero
+    shapley_value = 0.0
+
+
+    # Iterate over all possible permutations of features
+    for perm in itertools.permutations(range(num_features)):
+        # print("perm", perm)
+        # Find the index of the current feature in the permutation
+        index = perm.index(feature)
+        # print("index",index)
+
+        # Check if the current feature is the first feature in the permutation
+        if index == 0:
+            # Calculate the contribution of the first feature to the prediction
+            X_perm = X[:, perm]
+            p = np.mean(y[X_perm[:, index] <= np.median(X_perm[:, index])])
+            shapley_value += p
+
+        # Otherwise, calculate the contribution of the current feature to the prediction
+        else:
+            # Calculate the contribution of all features before the current feature
+            X_perm = X[:, perm[:index]]
+            p1 = np.mean(y[X_perm[:, index-1] <= np.median(X_perm[:, index-1])])
+            X_perm = X[:, perm[:index+1]]
+            p2 = np.mean(y[(X_perm[:, index-1] <= np.median(X_perm[:, index-1])) & (X_perm[:, index] >= np.median(X_perm[:, index]))])
+            shapley_value += (p2 - p1) * math.factorial(index) * math.factorial(num_features - index - 1)
+
+    # Normalize the Shapley value
+    print()
+    print("shapley val1", shapley_value)
+    shapley_value /= math.factorial(num_features)
+
+    print()
+    print("shapley val",shapley_value)
+    return shapley_value
 
 
 def shapley_value_calc(X, y, feature):

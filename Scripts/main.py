@@ -16,15 +16,17 @@ from Scripts import evaluation as evl
 # df = pd.read_csv('microgrid_data.csv')3 layers.
 # df = pd.read_csv('glass.csv')
 # df = pd.read_csv('heart_diseases_dataset.csv')
-# df = pd.read_csv('wine_quality_dataset.csv')
+# df = pd.read_csv('wine_quality_dataset.csv')pima
 
 
 # This works
-df = pd.read_csv('../Dataset/titanic_1.csv')
-df['Sex'].replace(['male', 'female'], [0, 1], inplace=True)
-df['Embarked'].replace(['S', 'C', 'Q'], [0, 1, 2], inplace=True)
-# Drop rows with missing values
-df = df.dropna()
+df = pd.read_csv('../Dataset/diabetes.csv')
+
+# df = pd.read_csv('../Dataset/titanic_1.csv')
+# df['Sex'].replace(['male', 'female'], [0, 1], inplace=True)
+# df['Embarked'].replace(['S', 'C', 'Q'], [0, 1, 2], inplace=True)
+# # Drop rows with missing values
+# df = df.dropna()
 
 
 # Get the x and y values as NumPy arrays
@@ -45,7 +47,7 @@ print('y shape:', y.shape)
 # Load your data and split it into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-print("X_train",X_train)
+# print("X_train",X_train)
 
 #Get the preprocessed dataset to select the best features
 
@@ -58,30 +60,30 @@ if os.path.exists(filename):
     os.remove(filename)
 
 
-#Univariate feature selection
-model = "Univariate"
-X_train_reduced, X_test_reduced = univariate.get_best_features(X_train, X_test, y_train, y_test)
-evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
-
-# tree classifier
-model = "Tree Classifier"
-X_train_reduced, X_test_reduced = tree_cls.get_best_features(X, y, X_train, X_test, y_train, y_test, num_cols)
-evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
-
-#RFE
-model = "RFE"
-X_train_reduced, X_test_reduced = rfe.get_best_features(X_train, X_test, y_train, y_test)
-evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
-
-#RFFS
-model = "RFFS"
-X_train_reduced, X_test_reduced = rffs.get_best_features(X_train, X_test, y_train, y_test)
-evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
-
-#Shapley value method - this is the shapley method I guess
-model = "Original"
-evl.evaluation(model, X_train, X_test, y_train, y_test)
-
+# #Univariate feature selection
+# model = "Univariate"
+# X_train_reduced, X_test_reduced = univariate.get_best_features(X_train, X_test, y_train, y_test)
+# evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
+#
+# # tree classifier
+# model = "Tree Classifier"
+# X_train_reduced, X_test_reduced = tree_cls.get_best_features(X, y, X_train, X_test, y_train, y_test, num_cols)
+# evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
+#
+# #RFE
+# model = "RFE"
+# X_train_reduced, X_test_reduced = rfe.get_best_features(X_train, X_test, y_train, y_test)
+# evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
+#
+# #RFFS
+# model = "RFFS"
+# X_train_reduced, X_test_reduced = rffs.get_best_features(X_train, X_test, y_train, y_test)
+# evl.evaluation(model, X_train_reduced, X_test_reduced, y_train, y_test)
+#
+# #Shapley value method - this is the shapley method I guess
+# model = "Original"
+# evl.evaluation(model, X_train, X_test, y_train, y_test)
+#
 #Shapley value method - this is the shapley method I guess
 model = "Shapley"
 X_train_reduced, X_test_reduced = shap.get_best_features(X, y, X_train, X_test, y_train, y_test, num_cols)

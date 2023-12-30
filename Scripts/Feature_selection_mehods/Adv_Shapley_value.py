@@ -23,6 +23,7 @@ def shapley_value_calc(X, y, feature):
     # Compute the Shapley values for the feature of interest
     shap_values = explainer(X, check_additivity=False)[:, feature]
     print("shap", shap_values.values)
+    print("shap", shap_values.shape)
 
     # Extract the values from the Explanation object and calculate the mean Shapley value
     mean_shap = np.mean(np.abs(shap_values.values))
